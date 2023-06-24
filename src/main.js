@@ -21,7 +21,7 @@ app.use(async (ctx, next) => {
 router.post('/download', (ctx, next) => {
   console.log(ctx.request.body)
   const target = ctx.request.body.url;
-  download(target, Date.now() + '.png', () => {console.log('done')})
+  download(target, () => {console.log('done')})
   ctx.response.body = 'success'
 })
 
